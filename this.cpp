@@ -19,10 +19,10 @@ void checkvisited(pair<int,int> p1, int parent[])
     if((parent[p1.first] == -1 && parent[p1.second] == -1) || (parent[p1.first] == -1 && parent[p1.second] == 1) ||
     (parent[p1.first] == 1 && parent[p1.second] == -1))
     {
-        cout<<a<<" Edge"<<p1.first<<" "<<p1.second<<endl;
+        cout<<a<<" Edge "<<p1.first<<" "<<p1.second<<endl;
         a++;
         parent[p1.first] = 1;
-        parent[p1.second] == -1;
+        parent[p1.second] = 1;
     }
 }
 void kruskal(vector<pair<pair<int,int>,int> > vec,int v, int e)
