@@ -10,9 +10,9 @@ void act_sec(vector<vector<int> > vec,int n)
 {
 	sort(vec.begin(),vec.end(),comp);
 	int c = 0;
-	for(int i=0;i<n-1;i++)
+	for(int i=1;i<n;i++)
 	{
-		if(vec[i+1][0]>=vec[i][1])
+		if(vec[0][1]<=vec[i][0])
 		{
 			c++;
 		}
