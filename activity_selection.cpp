@@ -9,15 +9,19 @@ bool comp(vector<int> x,vector<int> y)
 void act_sec(vector<vector<int> > vec,int n)
 {
 	sort(vec.begin(),vec.end(),comp);
-	int c = 0;
+	int c = 1;
+	int x = vec[0][1];
+	cout<<"Sequence of Activiy : "<<vec[0][2]<<" ";
 	for(int i=1;i<n;i++)
 	{
-		if(vec[0][1]<=vec[i][0])
+		if(x<=vec[i][0])
 		{
 			c++;
+			x = vec[i][1];
+			cout<<vec[i][2]<<" ";
 		}
 	}
-	cout<<"Maximum value : "<<c;
+	cout<<"\nMaximum value : "<<c;
 }
 	
 int main()
@@ -25,16 +29,16 @@ int main()
 	int n;
 	cout<<"Enter the size : ";
 	cin>>n;
-	vector<vector<int> > vec(n,vector<int> (2,0));
+	vector<vector<int> > vec(n,vector<int> (3,0));
 	
 	for(int i=0;i<n;i++)
 	{
 		cout<<"Enter start time : ";
 		cin>>vec[i][0];
-		cout<<"Enter start time : ";
+		cout<<"Enter finish time : ";
 		cin>>vec[i][1];
+		vec[i][2] = i;
 	}
 	
 	act_sec(vec,n);
 }
-
