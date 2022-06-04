@@ -25,16 +25,32 @@ void topo_sort(vector<vector<int>> vec, int indegree[],int v, int e)
         for(int i=0;i<vec[x].size();i++)
         {
             indegree[vec[x][i]]--;
+            if(indegree[vec[x][i]] == 0)
+            {
+                que.push(vec[x][i]);
+            }
         }
         cout<<x<<" ";
         que.pop();
-        for(int i=0;i<v;i++)
-        {
-            if(indegree[i] == 0)
-            {
-                que.push(i);
-                indegree[i] = -1;
-            }
-        }
     }
+}
+
+int main()
+{
+    int v,e;
+    cout<<"Enter the vertex : ";
+    cin>>v;
+    cout<<"Enter the Edges : ";
+    cin>>e;
+    vector<vector<int>> vec(v);
+    int indegree[v] = {0};
+    for(int i=0;i<e;i++)
+    {
+        int x,y;
+        cout<<"Enter the Edge : ";
+        cin>>x>>y;
+        indegree[y]++;
+        addEdge(vec,x,y);
+    }
+    topo_sort(vec,indegree,v, e);
 }
