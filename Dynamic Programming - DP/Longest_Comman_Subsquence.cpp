@@ -2,6 +2,15 @@
 // LCS for input Sequences “ABCDGH” and “AEDFHR” is “ADH” of length 3. 
 // LCS for input Sequences “AGGTAB” and “GXTXAYB” is “GTAB” of length 4.
 
+//         0   1   2   3   4
+//             B   D   C   B
+// 0       0   0   0   0   0
+// 1   B   0   1   1   1   1
+// 2   A   0   1   1   1   1
+// 3   C   0   1   1   2   2
+// 4   D   0   1   2   2   2
+// 5   B   0   1   2   2   3
+
 
 #include<bits/stdc++.h>
 using namespace std;
